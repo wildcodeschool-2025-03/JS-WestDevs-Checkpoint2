@@ -18,6 +18,9 @@ function getFibonacciSequence(size: number): number[] {
     return [0];
   }
   const fib = [0, 1];
+  // if (size === 2) {
+  //   return fib;
+  // }
   for (let i = 2; i < size; i++) {
     fib[i] = fib[i - 2] + fib[i - 1];
   }
