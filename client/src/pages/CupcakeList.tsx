@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Cupcake from "../components/Cupcake";
+import { Link } from "react-router-dom";
 
 /* ************************************************************************* */
 // const sampleCupcakes: CupcakeArray = [
@@ -105,7 +106,9 @@ function CupcakeList() {
         {/* Step 5: filter cupcakes before repeating */}
         {filteredCupcakes.map((el) => (
           <li className="cupcake-item" key={el.id}>
-            <Cupcake data={el} />
+            <Link to={`/cupcakes/${el.id}`}>
+              <Cupcake data={el} />
+            </Link>
           </li>
         ))}
 
