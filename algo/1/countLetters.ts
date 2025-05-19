@@ -10,7 +10,11 @@ Exemples :
 */
 
 function countLetters(givenString: string, letter: string): number {
-  // Ton code ici !
+  for (let i = 0; i < givenString.length; i++) {
+    if (givenString === letter) {
+      return letter.length;
+    }
+  }
   return 0;
 }
 
