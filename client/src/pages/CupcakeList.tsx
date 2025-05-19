@@ -50,6 +50,7 @@ type AccessoryArray = { id: number; name: string; slug: string }[];
 function CupcakeList() {
   const [arrayOfCupcakes, setArrayOfCupcakes] = useState<CupcakeData[]>([]);
   const [accessories, setAccessoiries] = useState<AccessoryArray>([]);
+  const [selectedAccessory, setSelectedAccessory] = useState("");
 
   console.log("Voici arrayOfCupacakes", arrayOfCupcakes);
 
@@ -71,6 +72,13 @@ function CupcakeList() {
 
   // Step 5: create filter state
 
+  let filteredCupcakes = arrayOfCupcakes;
+  if (selectedAccessory !== "") {
+    filteredCupcakes = arrayOfCupcakes.filter(
+      (cupcake) => cupcake.accessory_id === selectedAccessory,
+    );
+  }
+
   return (
     <>
       <h1>My cupcakes</h1>
@@ -78,7 +86,10 @@ function CupcakeList() {
         <label htmlFor="cupcake-select">
           {/* Step 5: use a controlled component for select */}
           Filter by{" "}
-          <select id="cupcake-select">
+          <select
+            id="cupcake-select"
+            onChange={(e) => setSelectedAccessory(e.target.value)}
+          >
             <option value="">---</option>
             {accessories.map((el) => (
               <option key={el.id} value={el.id}>
@@ -92,7 +103,7 @@ function CupcakeList() {
       <ul className="cupcake-list" id="cupcake-list">
         {/* Step 2: repeat this block for each cupcake */}
         {/* Step 5: filter cupcakes before repeating */}
-        {arrayOfCupcakes.map((el) => (
+        {filteredCupcakes.map((el) => (
           <li className="cupcake-item" key={el.id}>
             <Cupcake data={el} />
           </li>
