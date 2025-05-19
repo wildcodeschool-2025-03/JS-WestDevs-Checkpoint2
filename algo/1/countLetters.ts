@@ -9,9 +9,20 @@ Exemples :
 * "bbcc" et "a" -> 0
 */
 
+const word = "natation";
+
 function countLetters(givenString: string, letter: string): number {
-  // Ton code ici !
-  return 0;
+  let word = 0;
+  for (let i = 0; i < givenString.length; i++) {
+    if (givenString[i] === letter) {
+      word++;
+    }
+  }
+  return word;
 }
+
+console.log(countLetters("aaaaabbbaa", "a"));
+console.log(countLetters("bbacbaaa", "c"));
+console.log(countLetters("bbcc", "a"));
 
 export default countLetters;
