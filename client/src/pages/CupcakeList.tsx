@@ -98,9 +98,9 @@ function CupcakeList() {
       </form>
       <ul className="cupcake-list" id="cupcake-list">
         {cupcakes
+          /* Step 5: filter cupcakes before repeating */
           .filter((cupcake) => cupcake.accessory.includes(selectAccessory))
           .map((cupcake) => (
-            /* Step 5: filter cupcakes before repeating */
             <li key={cupcake.id} className="cupcake-item">
               <Cupcake data={cupcake} />
             </li>
