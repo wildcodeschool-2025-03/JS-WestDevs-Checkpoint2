@@ -11,7 +11,13 @@ Exemples :
 
 function countLetters(givenString: string, letter: string): number {
   // Ton code ici !
-  return 0;
+  let numberOfLetter = 0;
+  for (let i = 0; i < givenString.length; i++) {
+    if (givenString[i] === letter) {
+      numberOfLetter++;
+    }
+  }
+  return numberOfLetter;
 }
 
 export default countLetters;
