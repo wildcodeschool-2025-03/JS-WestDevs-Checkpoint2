@@ -9,9 +9,15 @@ Exemples :
 * "bbcc" et "a" -> 0
 */
 
-function countLetters(givenString: string, letter: string): number {
-  // Ton code ici !
-  return 0;
+function countLetters(givenString: string, letter: string) {
+  const string = "";
+
+  for (let i = 0; i < string.length; i++)
+    if (string[i] === letter) {
+      // const indexOf = givenString.indexOf(letter);
+
+      return 0;
+    }
 }
 
 export default countLetters;

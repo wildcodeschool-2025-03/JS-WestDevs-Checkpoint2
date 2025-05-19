@@ -1,3 +1,5 @@
+import type { ChangeEvent } from "react";
+import { useEffect, useState } from "react";
 import Cupcake from "../components/Cupcake";
 
 /* ************************************************************************* */
@@ -38,6 +40,22 @@ const sampleCupcakes: CupcakeArray = [
 function CupcakeList() {
   // Step 1: get all cupcakes
 
+  const [, setCupcakeList] = useState([]);
+  const [option, setOption] = useState("");
+
+  function handleChange(e: ChangeEvent<HTMLSelectElement>) {
+    setOption(e.target.value);
+  }
+
+  useEffect(() => {
+    if (option !== "???") {
+      fetch("http://localhost:3310/api/cupcakes")
+        .then((res) => res.json())
+        .then((data) => setCupcakeList(data))
+        .catch(console.error);
+    }
+  }, [option]);
+
   // Step 3: get all accessories
 
   // Step 5: create filter state
@@ -45,6 +63,9 @@ function CupcakeList() {
   return (
     <>
       <h1>My cupcakes</h1>
+      <select onChange={handleChange}>
+        <option value="???">Veuiller choisir</option>
+      </select>
       <form className="center">
         <label htmlFor="cupcake-select">
           {/* Step 5: use a controlled component for select */}
