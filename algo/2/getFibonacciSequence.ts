@@ -18,11 +18,8 @@ function getFibonacciSequence(size: number): number[] {
   if (size === 1) {
     return [0];
   }
-  for (let n = 1; n <= size; n++) {
-  }
+  for (let n = 1; n <= size; n++) {}
   return [];
 }
-
-
 
 export default getFibonacciSequence;
