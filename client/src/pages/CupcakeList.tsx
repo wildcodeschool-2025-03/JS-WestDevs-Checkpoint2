@@ -84,7 +84,7 @@ function CupcakeList() {
           >
             <option value="">---</option>
             {accessories.map((accessory) => (
-              <option key={accessory.id} value={accessory.id}>
+              <option key={accessory.id} value={accessory.slug}>
                 {accessory.name}
               </option>
             ))}
@@ -92,12 +92,14 @@ function CupcakeList() {
         </label>
       </form>
       <ul className="cupcake-list" id="cupcake-list">
-        {cupcakes.map((cupcake) => (
-          /* Step 5: filter cupcakes before repeating */
-          <li key={cupcake.id} className="cupcake-item">
-            <Cupcake data={cupcake} />
-          </li>
-        ))}
+        {cupcakes
+          .filter((cupcake) => cupcake.accessory.includes(selectAccessory))
+          .map((cupcake) => (
+            /* Step 5: filter cupcakes before repeating */
+            <li key={cupcake.id} className="cupcake-item">
+              <Cupcake data={cupcake} />
+            </li>
+          ))}
         {/* end of block */}
       </ul>
     </>
