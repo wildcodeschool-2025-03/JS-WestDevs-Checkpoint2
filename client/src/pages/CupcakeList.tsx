@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Cupcake from "../components/Cupcake";
 
 interface Accessory {
@@ -103,9 +104,11 @@ function CupcakeList() {
         {/* Step 2: repeat this block for each cupcake */}
         {/* Step 5: filter cupcakes before repeating */}
         {(filteredCupcakes ? filteredCupcakes : cupcakes).map((cupcake) => (
-          <li key={cupcake.id} className="cupcake-item">
-            <Cupcake data={cupcake} />
-          </li>
+          <Link key={cupcake.id} to={`/cupcakes/${cupcake.id}`}>
+            <li className="cupcake-item">
+              <Cupcake data={cupcake} />
+            </li>
+          </Link>
         ))}
         {/* end of block */}
       </ul>
