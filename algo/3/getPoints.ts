@@ -1,6 +1,7 @@
 /*
 Notre équipe de football participe à un tournoi dans lequel elle a joué 10 matchs.
-Les résultats du match sont notés "3:0" : le premier chiffre est le nombre de buts de **notre** équipe ; le second est celui de l'autre équipe.
+Les résultats du match sont notés "3:0" : le premier chiffre est le nombre de buts de **notre** équipe ; 
+le second est celui de l'autre équipe.
 Pour connaître le score de notre équipe, nous suivons ces règles :
 - Victoire : 3pts
 - Nul : 1pt

@@ -1,4 +1,4 @@
-type Cupcake = {
+export type CupcakeI = {
   id: number;
   accessory_id: string;
   accessory: string;

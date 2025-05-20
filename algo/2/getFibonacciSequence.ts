@@ -1,5 +1,6 @@
 /*
-Créé une fonction getFibonacciSequence qui prend un nombre n en paramètre et retourne un tableau contenant les n premiers nombres de la suite de Fibonacci.
+Créé une fonction getFibonacciSequence qui prend un nombre n en paramètre 
+et retourne un tableau contenant les n premiers nombres de la suite de Fibonacci.
 
 Détails
 
